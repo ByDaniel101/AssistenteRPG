@@ -30,5 +30,5 @@ public class RelacionamentoModel implements Serializable {
     private PersonagemModel relacionado;
 
     @Column
-    private List<String> opnioesRelação;
+    private List<String> opnioesRelacao;
 }

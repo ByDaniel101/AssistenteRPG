@@ -1,5 +1,6 @@
 package br.com.danielmsa.RPG.Models;
 
+import br.com.danielmsa.RPG.user.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,9 +30,9 @@ public class PersonagemModel {
     @OneToMany(mappedBy = "relacionado")
     private List<RelacionamentoModel> relacionamentosComoRelacionado;
     @Column
-    private double dinheiro;
+    private long dinheiro;
 
-    @Column(length = 50)
+    @Column(length = 50, nullable = false)
     private String nome;
 
     @Column

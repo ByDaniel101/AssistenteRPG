@@ -30,12 +30,36 @@ As configurações devem ser alteradas de acordo com o seu usuario e senha no Po
 Esta API fornece os seguintes Endpoints:
 
 ```markdown
-GET /cronica - Retorna todas as cronicas (Acesso de ADMIN).
+-- Personagens (Acesso autenticado) --
 
-GET /cronica/{id} - Retorna a cronica do id em questão (Acesso de ADMIN).
+GET /personagem/{id} - Retorna o personagem do id em questão.
 
-GET /cronica/byname/{nome} - Retorna a cronica com o nome em questão (Acesso de ADMIN).
+GET /personagem/bycronica/{idCronica} - Retona uma lista com os personagens na cronica em questão.
 
+POST /personagem - Adiciona um personagem.
+##Parametros: Personagem
+
+PUT /personagem - Edita um personagem
+##Parametros: Personagem
+
+PATCH /personagem - Edita atributos especificos de um personagem (Atributo de dinheiro não pode ser alterado neste endpoint)
+##Parametros: Personagem
+
+PATCH /personagem/alterarDinheiro/{id}/{novaQuantia} - Edita a quantia de dinheiro do personagem com o id em questão.
+
+DELETE /personagem/{id} - Apaga o personagem com o id em questão.
+
+-- Crônica (Acesso de ADMIN) --
+GET /cronica - Retorna todas as cronicas.
+
+GET /cronica/{id} - Retorna a cronica do id em questão.
+
+GET /cronica/byname/{nome} - Retorna a cronica com o nome em questão.
+
+POST /cronica - Adiciona uma nova cronica.
+##Parametros: {nome : String, personagens : List<String>}
+
+-- Autenticação --
 POST /auth/login - Login na aplicação
 
 POST /auth/register - Registrar um novo usuário com nivel de acesso USER.
